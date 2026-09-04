@@ -1,7 +1,7 @@
 class Solution {
 public:
     long long subArrayRanges(vector<int>& nums) {
-        vector<int>range;
+        long long sum=0;
         for(int i=0;i<nums.size();i++){
             vector<int>sub;
             int mini=INT_MAX;
@@ -10,14 +10,14 @@ public:
                 if(mini>nums[j])mini=nums[j];
                 if(maxi<nums[j])maxi=nums[j];
                 int diff=maxi-mini;
-                range.push_back(diff);
+                sum+=diff;
 
             }
         }
-        long long sum=0;
-        for(auto x:range){
-            sum+=x;
-        }
+        // long long sum=0;
+        // for(auto x:range){
+        //     sum+=x;
+        // }
         return sum;
         
     }
