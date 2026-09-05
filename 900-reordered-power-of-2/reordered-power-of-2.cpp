@@ -11,7 +11,7 @@ public:
     bool reorderedPowerOf2(int n) {
         vector<int>target=getfreq(n);
         for(int i=0;i<31;i++){
-            int  power=1<<i;
+            int power=1<<i;
             if(getfreq(power)==target)return true;
         }
         return false ;
